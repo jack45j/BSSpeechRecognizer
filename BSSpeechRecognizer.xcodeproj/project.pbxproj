@@ -10,6 +10,18 @@
 		DB8667A629A3491700D22114 /* BSSpeechRecognizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB86679D29A3491700D22114 /* BSSpeechRecognizer.framework */; };
 		DB8667AB29A3491700D22114 /* BSSpeechRecognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8667AA29A3491700D22114 /* BSSpeechRecognizerTests.swift */; };
 		DB8667AC29A3491700D22114 /* BSSpeechRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8667A029A3491700D22114 /* BSSpeechRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB8667BF29A3497600D22114 /* BSSpeechRecognizerAuthorizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8667B529A3497600D22114 /* BSSpeechRecognizerAuthorizeManager.swift */; };
+		DB8667C029A3497600D22114 /* BSSpeechLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8667B729A3497600D22114 /* BSSpeechLoadingViewModel.swift */; };
+		DB8667C129A3497600D22114 /* BSSpeechLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8667B829A3497600D22114 /* BSSpeechLoadingView.swift */; };
+		DB8667C229A3497600D22114 /* BSSpeechErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8667B929A3497600D22114 /* BSSpeechErrorView.swift */; };
+		DB8667C329A3497600D22114 /* BSSpeechRecognizeWaveViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8667BA29A3497600D22114 /* BSSpeechRecognizeWaveViewPresenter.swift */; };
+		DB8667C429A3497600D22114 /* BSSpeechErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8667BB29A3497600D22114 /* BSSpeechErrorViewModel.swift */; };
+		DB8667C529A3497600D22114 /* BSSpeechWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8667BC29A3497600D22114 /* BSSpeechWaveView.swift */; };
+		DB8667C629A3497600D22114 /* BSWaveVisualizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8667BD29A3497600D22114 /* BSWaveVisualizeView.swift */; };
+		DB8667C729A3497600D22114 /* BSSpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8667BE29A3497600D22114 /* BSSpeechRecognizer.swift */; };
+		DB86680629A34AA500D22114 /* BSSpeechDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB86680529A34AA500D22114 /* BSSpeechDisplayView.swift */; };
+		DB86680829A34AB400D22114 /* BSSpeechDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB86680729A34AB400D22114 /* BSSpeechDisplayViewModel.swift */; };
+		DB86680A29A34AEB00D22114 /* BSSpeechWaveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB86680929A34AEB00D22114 /* BSSpeechWaveViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +39,18 @@
 		DB8667A029A3491700D22114 /* BSSpeechRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSSpeechRecognizer.h; sourceTree = "<group>"; };
 		DB8667A529A3491700D22114 /* BSSpeechRecognizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BSSpeechRecognizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8667AA29A3491700D22114 /* BSSpeechRecognizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSSpeechRecognizerTests.swift; sourceTree = "<group>"; };
+		DB8667B529A3497600D22114 /* BSSpeechRecognizerAuthorizeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSSpeechRecognizerAuthorizeManager.swift; sourceTree = "<group>"; };
+		DB8667B729A3497600D22114 /* BSSpeechLoadingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSSpeechLoadingViewModel.swift; sourceTree = "<group>"; };
+		DB8667B829A3497600D22114 /* BSSpeechLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSSpeechLoadingView.swift; sourceTree = "<group>"; };
+		DB8667B929A3497600D22114 /* BSSpeechErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSSpeechErrorView.swift; sourceTree = "<group>"; };
+		DB8667BA29A3497600D22114 /* BSSpeechRecognizeWaveViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSSpeechRecognizeWaveViewPresenter.swift; sourceTree = "<group>"; };
+		DB8667BB29A3497600D22114 /* BSSpeechErrorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSSpeechErrorViewModel.swift; sourceTree = "<group>"; };
+		DB8667BC29A3497600D22114 /* BSSpeechWaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSSpeechWaveView.swift; sourceTree = "<group>"; };
+		DB8667BD29A3497600D22114 /* BSWaveVisualizeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSWaveVisualizeView.swift; sourceTree = "<group>"; };
+		DB8667BE29A3497600D22114 /* BSSpeechRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSSpeechRecognizer.swift; sourceTree = "<group>"; };
+		DB86680529A34AA500D22114 /* BSSpeechDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSSpeechDisplayView.swift; sourceTree = "<group>"; };
+		DB86680729A34AB400D22114 /* BSSpeechDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSSpeechDisplayViewModel.swift; sourceTree = "<group>"; };
+		DB86680929A34AEB00D22114 /* BSSpeechWaveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSSpeechWaveViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +94,10 @@
 			isa = PBXGroup;
 			children = (
 				DB8667A029A3491700D22114 /* BSSpeechRecognizer.h */,
+				DB8667BE29A3497600D22114 /* BSSpeechRecognizer.swift */,
+				DB8667B529A3497600D22114 /* BSSpeechRecognizerAuthorizeManager.swift */,
+				DB8667BD29A3497600D22114 /* BSWaveVisualizeView.swift */,
+				DB8667B629A3497600D22114 /* Share Presentation */,
 			);
 			path = BSSpeechRecognizer;
 			sourceTree = "<group>";
@@ -80,6 +108,22 @@
 				DB8667AA29A3491700D22114 /* BSSpeechRecognizerTests.swift */,
 			);
 			path = BSSpeechRecognizerTests;
+			sourceTree = "<group>";
+		};
+		DB8667B629A3497600D22114 /* Share Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				DB8667BA29A3497600D22114 /* BSSpeechRecognizeWaveViewPresenter.swift */,
+				DB8667B829A3497600D22114 /* BSSpeechLoadingView.swift */,
+				DB8667B729A3497600D22114 /* BSSpeechLoadingViewModel.swift */,
+				DB8667B929A3497600D22114 /* BSSpeechErrorView.swift */,
+				DB8667BB29A3497600D22114 /* BSSpeechErrorViewModel.swift */,
+				DB86680529A34AA500D22114 /* BSSpeechDisplayView.swift */,
+				DB86680729A34AB400D22114 /* BSSpeechDisplayViewModel.swift */,
+				DB8667BC29A3497600D22114 /* BSSpeechWaveView.swift */,
+				DB86680929A34AEB00D22114 /* BSSpeechWaveViewModel.swift */,
+			);
+			path = "Share Presentation";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +188,7 @@
 				TargetAttributes = {
 					DB86679C29A3491700D22114 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 					DB8667A429A3491700D22114 = {
 						CreatedOnToolsVersion = 14.2;
@@ -191,6 +236,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB8667C529A3497600D22114 /* BSSpeechWaveView.swift in Sources */,
+				DB8667C229A3497600D22114 /* BSSpeechErrorView.swift in Sources */,
+				DB8667C029A3497600D22114 /* BSSpeechLoadingViewModel.swift in Sources */,
+				DB8667C629A3497600D22114 /* BSWaveVisualizeView.swift in Sources */,
+				DB86680629A34AA500D22114 /* BSSpeechDisplayView.swift in Sources */,
+				DB8667C329A3497600D22114 /* BSSpeechRecognizeWaveViewPresenter.swift in Sources */,
+				DB8667C129A3497600D22114 /* BSSpeechLoadingView.swift in Sources */,
+				DB8667C429A3497600D22114 /* BSSpeechErrorViewModel.swift in Sources */,
+				DB86680829A34AB400D22114 /* BSSpeechDisplayViewModel.swift in Sources */,
+				DB8667BF29A3497600D22114 /* BSSpeechRecognizerAuthorizeManager.swift in Sources */,
+				DB86680A29A34AEB00D22114 /* BSSpeechWaveViewModel.swift in Sources */,
+				DB8667C729A3497600D22114 /* BSSpeechRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +393,7 @@
 		DB8667B029A3491700D22114 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -356,6 +414,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +423,7 @@
 		DB8667B129A3491700D22114 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -392,6 +452,7 @@
 		DB8667B329A3491700D22114 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 79399T3H3C;
@@ -408,6 +469,7 @@
 		DB8667B429A3491700D22114 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 79399T3H3C;
