@@ -64,6 +64,7 @@ final public class BSSpeechRecognizer: NSObject {
     }
     
     public func start() {
+        presenter.didChangeSpeechState(to: false)
         authorizer.validatePermissions { result in
             switch result {
             case .success:
@@ -112,6 +113,8 @@ final public class BSSpeechRecognizer: NSObject {
         if startAudioEngine().isFailure == false {
             autoStopCounter = 0
         }
+        
+        presenter.didChangeSpeechState(to: true)
     }
     
     private func cancelPreviousTask() {

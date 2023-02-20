@@ -8,9 +8,10 @@
 import UIKit
 import BSSpeechRecognizer
 
-class ViewController: UIViewController, BSSpeechErrorView, BSSpeechLoadingView, BSSpeechDisplayView {
+class ViewController: UIViewController, BSSpeechErrorView, BSSpeechStateView, BSSpeechDisplayView {
     
     
+    @IBOutlet weak var recognitionButton: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
     
     @IBAction func didTouchStartRecognition(_ sender: Any) {
@@ -22,15 +23,15 @@ class ViewController: UIViewController, BSSpeechErrorView, BSSpeechLoadingView, 
             .init(resourceView: self,
                   waveView: waveView,
                   errorView: self,
-                  loadingView: self))
+                  stateView: self))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
-    func display(_ viewModel: BSSpeechLoadingViewModel) {
-        
+    func display(_ viewModel: BSSpeechStateViewModel) {
+        recognitionButton.setTitle(viewModel.isRecognizing ? "Go Ahead! I'm listening" : "Start Recognition", for: .normal)
     }
     
     func display(_ viewModel: BSSpeechErrorViewModel) {

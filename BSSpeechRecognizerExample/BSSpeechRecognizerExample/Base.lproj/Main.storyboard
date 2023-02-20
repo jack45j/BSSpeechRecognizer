@@ -56,6 +56,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="recognitionButton" destination="51c-c0-eKs" id="686-Cn-8TI"/>
                         <outlet property="resultLabel" destination="B9c-7p-EDl" id="hT5-lZ-jLz"/>
                         <outlet property="waveView" destination="cdS-TQ-Abf" id="PJt-gj-5Fy"/>
                     </connections>

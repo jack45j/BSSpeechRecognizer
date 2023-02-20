@@ -11,8 +11,8 @@
 		DB8667AB29A3491700D22114 /* BSSpeechRecognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8667AA29A3491700D22114 /* BSSpeechRecognizerTests.swift */; };
 		DB8667AC29A3491700D22114 /* BSSpeechRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8667A029A3491700D22114 /* BSSpeechRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB8667BF29A3497600D22114 /* BSSpeechRecognizerAuthorizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8667B529A3497600D22114 /* BSSpeechRecognizerAuthorizeManager.swift */; };
-		DB8667C029A3497600D22114 /* BSSpeechLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8667B729A3497600D22114 /* BSSpeechLoadingViewModel.swift */; };
-		DB8667C129A3497600D22114 /* BSSpeechLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8667B829A3497600D22114 /* BSSpeechLoadingView.swift */; };
+		DB8667C029A3497600D22114 /* BSSpeechStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8667B729A3497600D22114 /* BSSpeechStateViewModel.swift */; };
+		DB8667C129A3497600D22114 /* BSSpeechStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8667B829A3497600D22114 /* BSSpeechStateView.swift */; };
 		DB8667C229A3497600D22114 /* BSSpeechErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8667B929A3497600D22114 /* BSSpeechErrorView.swift */; };
 		DB8667C329A3497600D22114 /* BSSpeechRecognizeWaveViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8667BA29A3497600D22114 /* BSSpeechRecognizeWaveViewPresenter.swift */; };
 		DB8667C429A3497600D22114 /* BSSpeechErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8667BB29A3497600D22114 /* BSSpeechErrorViewModel.swift */; };
@@ -40,8 +40,8 @@
 		DB8667A529A3491700D22114 /* BSSpeechRecognizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BSSpeechRecognizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8667AA29A3491700D22114 /* BSSpeechRecognizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSSpeechRecognizerTests.swift; sourceTree = "<group>"; };
 		DB8667B529A3497600D22114 /* BSSpeechRecognizerAuthorizeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSSpeechRecognizerAuthorizeManager.swift; sourceTree = "<group>"; };
-		DB8667B729A3497600D22114 /* BSSpeechLoadingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSSpeechLoadingViewModel.swift; sourceTree = "<group>"; };
-		DB8667B829A3497600D22114 /* BSSpeechLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSSpeechLoadingView.swift; sourceTree = "<group>"; };
+		DB8667B729A3497600D22114 /* BSSpeechStateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSSpeechStateViewModel.swift; sourceTree = "<group>"; };
+		DB8667B829A3497600D22114 /* BSSpeechStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSSpeechStateView.swift; sourceTree = "<group>"; };
 		DB8667B929A3497600D22114 /* BSSpeechErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSSpeechErrorView.swift; sourceTree = "<group>"; };
 		DB8667BA29A3497600D22114 /* BSSpeechRecognizeWaveViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSSpeechRecognizeWaveViewPresenter.swift; sourceTree = "<group>"; };
 		DB8667BB29A3497600D22114 /* BSSpeechErrorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSSpeechErrorViewModel.swift; sourceTree = "<group>"; };
@@ -114,8 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				DB8667BA29A3497600D22114 /* BSSpeechRecognizeWaveViewPresenter.swift */,
-				DB8667B829A3497600D22114 /* BSSpeechLoadingView.swift */,
-				DB8667B729A3497600D22114 /* BSSpeechLoadingViewModel.swift */,
+				DB8667B829A3497600D22114 /* BSSpeechStateView.swift */,
+				DB8667B729A3497600D22114 /* BSSpeechStateViewModel.swift */,
 				DB8667B929A3497600D22114 /* BSSpeechErrorView.swift */,
 				DB8667BB29A3497600D22114 /* BSSpeechErrorViewModel.swift */,
 				DB86680529A34AA500D22114 /* BSSpeechDisplayView.swift */,
@@ -238,11 +238,11 @@
 			files = (
 				DB8667C529A3497600D22114 /* BSSpeechWaveView.swift in Sources */,
 				DB8667C229A3497600D22114 /* BSSpeechErrorView.swift in Sources */,
-				DB8667C029A3497600D22114 /* BSSpeechLoadingViewModel.swift in Sources */,
+				DB8667C029A3497600D22114 /* BSSpeechStateViewModel.swift in Sources */,
 				DB8667C629A3497600D22114 /* BSWaveVisualizeView.swift in Sources */,
 				DB86680629A34AA500D22114 /* BSSpeechDisplayView.swift in Sources */,
 				DB8667C329A3497600D22114 /* BSSpeechRecognizeWaveViewPresenter.swift in Sources */,
-				DB8667C129A3497600D22114 /* BSSpeechLoadingView.swift in Sources */,
+				DB8667C129A3497600D22114 /* BSSpeechStateView.swift in Sources */,
 				DB8667C429A3497600D22114 /* BSSpeechErrorViewModel.swift in Sources */,
 				DB86680829A34AB400D22114 /* BSSpeechDisplayViewModel.swift in Sources */,
 				DB8667BF29A3497600D22114 /* BSSpeechRecognizerAuthorizeManager.swift in Sources */,

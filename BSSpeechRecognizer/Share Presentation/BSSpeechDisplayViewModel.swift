@@ -9,4 +9,5 @@ import Foundation
 
 public struct BSSpeechDisplayViewModel {
     public var result: String
+    public var isFinal: Bool
 }
