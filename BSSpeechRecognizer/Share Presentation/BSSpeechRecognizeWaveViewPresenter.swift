@@ -20,30 +20,32 @@ final public class BSSpeechRecognizeWaveViewPresenter {
         self.stateView = stateView
     }
     
-    func didChangeSpeechState(to isRecognizing: Bool) {
-        stateView.display(.init(isRecognizing: isRecognizing))
-    }
-    
     func didRecognize(_ result: String, isFinal: Bool) {
         resourceView.display(.init(result: result, isFinal: isFinal))
     }
     
-    func didStartRecognition(_ duration: TimeInterval) {
-        didWaveViewVisible(to: true, duration: duration)
-    }
-    
-    func didFinishRecognition(with error: BSSpeechRecognizerAuthorizeManager.BSSpeechRecognizerError) {
-        didWaveViewVisible(to: false, duration: 0.5)
-        stateView.display(.init(isRecognizing: false))
-        errorView.display(.error(message: error.localizedDescription))
-    }
-    
-    func didWaveViewVisible(to show: Bool, duration: TimeInterval) {
+    func didStartRecognition(animateDuration: TimeInterval) {
+        stateView.display(.init(isRecognizing: true))
+        errorView.display(.noError)
         waveView.updateWithLevel(0.0)
-        waveView.display(.init(duration: duration, isShow: show))
+        waveView.display(.init(duration: animateDuration, isShow: true))
+    }
+    
+    func didFinishRecognition(with error: BSSpeechRecognizerAuthorizeManager.BSSpeechRecognizerError? = nil, animateDuration: TimeInterval) {
+        waveView.updateWithLevel(0.0)
+        waveView.display(.init(duration: animateDuration, isShow: false))
+        
+        stateView.display(.init(isRecognizing: false))
+        errorView.display(.init(message: error?.localizedDescription))
     }
     
     func updateWithLevel(_ level: CGFloat) {
-        waveView.updateWithLevel(level)
+        if level < 0 {
+            waveView.updateWithLevel(0)
+        } else if level > 1 {
+            waveView.updateWithLevel(1)
+        } else {
+            waveView.updateWithLevel(level)
+        }
     }
 }

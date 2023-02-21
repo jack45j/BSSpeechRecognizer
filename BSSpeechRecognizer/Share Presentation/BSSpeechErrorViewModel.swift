@@ -13,8 +13,4 @@ public struct BSSpeechErrorViewModel {
     static var noError: BSSpeechErrorViewModel {
         return BSSpeechErrorViewModel(message: nil)
     }
-    
-    static func error(message: String) -> BSSpeechErrorViewModel {
-        return BSSpeechErrorViewModel(message: message)
-    }
 }

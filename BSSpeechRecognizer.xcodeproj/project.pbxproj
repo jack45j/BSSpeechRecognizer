@@ -22,6 +22,7 @@
 		DB86680629A34AA500D22114 /* BSSpeechDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB86680529A34AA500D22114 /* BSSpeechDisplayView.swift */; };
 		DB86680829A34AB400D22114 /* BSSpeechDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB86680729A34AB400D22114 /* BSSpeechDisplayViewModel.swift */; };
 		DB86680A29A34AEB00D22114 /* BSSpeechWaveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB86680929A34AEB00D22114 /* BSSpeechWaveViewModel.swift */; };
+		DB86682029A466F600D22114 /* BSSpeechRecognizerConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB86681F29A466F600D22114 /* BSSpeechRecognizerConfigurable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		DB86680529A34AA500D22114 /* BSSpeechDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSSpeechDisplayView.swift; sourceTree = "<group>"; };
 		DB86680729A34AB400D22114 /* BSSpeechDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSSpeechDisplayViewModel.swift; sourceTree = "<group>"; };
 		DB86680929A34AEB00D22114 /* BSSpeechWaveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSSpeechWaveViewModel.swift; sourceTree = "<group>"; };
+		DB86681F29A466F600D22114 /* BSSpeechRecognizerConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSSpeechRecognizerConfigurable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				DB8667BE29A3497600D22114 /* BSSpeechRecognizer.swift */,
 				DB8667B529A3497600D22114 /* BSSpeechRecognizerAuthorizeManager.swift */,
 				DB8667BD29A3497600D22114 /* BSWaveVisualizeView.swift */,
+				DB86681F29A466F600D22114 /* BSSpeechRecognizerConfigurable.swift */,
 				DB8667B629A3497600D22114 /* Share Presentation */,
 			);
 			path = BSSpeechRecognizer;
@@ -245,6 +248,7 @@
 				DB8667C129A3497600D22114 /* BSSpeechStateView.swift in Sources */,
 				DB8667C429A3497600D22114 /* BSSpeechErrorViewModel.swift in Sources */,
 				DB86680829A34AB400D22114 /* BSSpeechDisplayViewModel.swift in Sources */,
+				DB86682029A466F600D22114 /* BSSpeechRecognizerConfigurable.swift in Sources */,
 				DB8667BF29A3497600D22114 /* BSSpeechRecognizerAuthorizeManager.swift in Sources */,
 				DB86680A29A34AEB00D22114 /* BSSpeechWaveViewModel.swift in Sources */,
 				DB8667C729A3497600D22114 /* BSSpeechRecognizer.swift in Sources */,

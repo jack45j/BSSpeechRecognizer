@@ -14,7 +14,9 @@ final public class BSSpeechRecognizerAuthorizeManager {
     
     public enum BSSpeechRecognizerError: Error {
         public enum AuthorizationReason {
-            case denied, restricted, usageDescription(missing: BSSpeechRecognizerAuthorizeManager.UsageDescriptionKey)
+            case denied
+            case restricted
+            case usageDescription(missing: BSSpeechRecognizerAuthorizeManager.UsageDescriptionKey)
         }
         public enum CancellationReason {
             case user, notFound
@@ -31,7 +33,14 @@ final public class BSSpeechRecognizerAuthorizeManager {
     private let speechRecognitionUsageDescriptionKey: UsageDescriptionKey = UsageDescriptionKey("NSSpeechRecognitionUsageDescription")
     
     public func validatePermissions(_ handler: @escaping ResultHandlerClouse) {
-        checkSpeechRecognizerAuthorization(handler)
+        checkSpeechRecognizerAuthorization { result in
+            switch result {
+            case .success:
+                self.checkMicrophoneAuthorization(handler)
+            case let .failure(error):
+                handler(.failure(error))
+            }
+        }
     }
     
     private func checkSpeechRecognizerAuthorization(_ handler: @escaping ResultHandlerClouse) {
@@ -50,6 +59,26 @@ final public class BSSpeechRecognizerAuthorizeManager {
             SFSpeechRecognizer.requestAuthorization { _ in
                 self.checkSpeechRecognizerAuthorization(handler)
             }
+        }
+    }
+    
+    private func checkMicrophoneAuthorization(_ handler: @escaping ResultHandlerClouse) {
+        guard Bundle.main.object(forInfoDictionaryKey: microphoneUsageDescriptionKey) != nil else {
+            handler(.failure(.authorization(reason: .usageDescription(missing: microphoneUsageDescriptionKey))))
+            return
+        }
+        
+        switch AVAudioSession.sharedInstance().recordPermission {
+        case .granted:
+            return handler(.success(()))
+        case .denied:
+            return handler(.failure(.authorization(reason: .denied)))
+        case .undetermined:
+            AVAudioSession.sharedInstance().requestRecordPermission { _ in
+                self.checkMicrophoneAuthorization(handler)
+            }
+        @unknown default:
+            return handler(.failure(.unknown(error: nil)))
         }
     }
 }

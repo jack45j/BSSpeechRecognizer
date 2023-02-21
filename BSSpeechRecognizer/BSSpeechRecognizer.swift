@@ -11,29 +11,6 @@ import AVFoundation
 import Speech
 import Accelerate
 
-public protocol BSSpeechRecognizerConfigurable {
-    var locale: Locale { get set }
-    var maxRecordDuration: Double { get set }
-    
-    var waveViewVisibleAnimateDuration: TimeInterval { get set }
-}
-
-public struct BSSpeechRecognizerConfiguration: BSSpeechRecognizerConfigurable {
-    public var locale: Locale
-    public var maxRecordDuration: Double
-    public var waveViewVisibleAnimateDuration: TimeInterval
-    
-    public init(locale: Locale = .init(identifier: "zh-TW"),
-                maxRecordDuration: Double = 60,
-                waveViewVisibleAnimateDuration: TimeInterval = 0.5) {
-        self.locale = locale
-        self.maxRecordDuration = maxRecordDuration
-        self.waveViewVisibleAnimateDuration = waveViewVisibleAnimateDuration
-    }
-}
-
-
-
 final public class BSSpeechRecognizer: NSObject {
     
     // AudioEngine
@@ -47,7 +24,7 @@ final public class BSSpeechRecognizer: NSObject {
     
     private var autoStopCounter: UInt = 0
     private var autoStopPower: Float = 0.25
-    private var autoStopTimer: UInt = 120
+    private var autoStopTimer: UInt
     
     private let LEVEL_LOWPASS_TRIG: Float32 = 0.2
     private var averagePower: Float = 0
@@ -57,31 +34,30 @@ final public class BSSpeechRecognizer: NSObject {
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     
-    
     public init(presenter: BSSpeechRecognizeWaveViewPresenter, config: any BSSpeechRecognizerConfigurable = BSSpeechRecognizerConfiguration()) {
         self.presenter = presenter
         self.config = config
+        self.autoStopTimer = UInt(config.maxRecordDuration / 3)
     }
     
     public func start() {
-        presenter.didChangeSpeechState(to: false)
         authorizer.validatePermissions { result in
             switch result {
             case .success:
                 self.startRecognition()
             case let .failure(error):
-                self.presenter.didFinishRecognition(with: error)
+                self.presenter.didFinishRecognition(with: error, animateDuration: self.config.waveViewVisibleAnimateDuration)
             }
         }
     }
     
     private func startRecognition() {
         OperationQueue.main.addOperation {
-            self.presenter.didStartRecognition(0.5)
+            self.presenter.didStartRecognition(animateDuration: self.config.waveViewVisibleAnimateDuration)
             do {
                 try self.beginRecognition()
             } catch {
-                self.presenter.didFinishRecognition(with: .unknown(error: error))
+                self.presenter.didFinishRecognition(with: .unknown(error: error), animateDuration: self.config.waveViewVisibleAnimateDuration)
             }
         }
     }
@@ -97,7 +73,7 @@ final public class BSSpeechRecognizer: NSObject {
         
         // Configure the audio session for the app.
         if configureAudioSession().isFailure {
-            self.presenter.didFinishRecognition(with: .audioUnitFailed)
+            self.presenter.didFinishRecognition(with: .audioUnitFailed, animateDuration: config.waveViewVisibleAnimateDuration)
         }
         
         // Create and configuration RecognitionRequest.
@@ -113,8 +89,6 @@ final public class BSSpeechRecognizer: NSObject {
         if startAudioEngine().isFailure == false {
             autoStopCounter = 0
         }
-        
-        presenter.didChangeSpeechState(to: true)
     }
     
     private func cancelPreviousTask() {
@@ -134,7 +108,7 @@ final public class BSSpeechRecognizer: NSObject {
         stopAudioEngine()
         cancelRecognitionRequest()
         OperationQueue.main.addOperation {
-            self.presenter.didWaveViewVisible(to: false, duration: 0.5)
+            self.presenter.didFinishRecognition(animateDuration: self.config.waveViewVisibleAnimateDuration)
         }
     }
     
@@ -156,7 +130,7 @@ final public class BSSpeechRecognizer: NSObject {
         cancelRecognitionRequest()
         stopAudioEngine()
         OperationQueue.main.addOperation {
-            self.presenter.didFinishRecognition(with: error)
+            self.presenter.didFinishRecognition(with: error, animateDuration: self.config.waveViewVisibleAnimateDuration)
         }
     }
     
