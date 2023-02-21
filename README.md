@@ -25,9 +25,12 @@ To integrate using Apple's Swift package manager, without Xcode integration, add
 - Initialize a BSSpeechRecognizer
   - resourceView should conform to BSSpeechDisplayView and will be use to handle the results of recognition
   - waveView should conform to BSSpeechWaveView and will be use to handle the changes of audio level (0~1)
+    - There has a implemented waveView called BSWaveVisualizeView based on [WaveformView-iOS](https://github.com/jyunderwood/WaveformView-iOS) by jyunderwood
   - errorView should conform to BSSpeechErrorView and will be use to handle the Errors
   - stateView should conform to BSSpeechStateView and will be use to handle the changes of recognizer available state
 ```swift
+@IBOutlet weak var waveView: BSWaveVisualizeView!
+
 let recognizer = BSSpeechRecognizer(
         presenter: BSSpeechRecognizeWaveViewPresenter(
             resourceView: self,
