@@ -28,9 +28,8 @@ To integrate using Apple's Swift package manager, without Xcode integration, add
     - There has a implemented waveView called BSWaveVisualizeView based on [WaveformView-iOS](https://github.com/jyunderwood/WaveformView-iOS) by jyunderwood
   - errorView should conform to BSSpeechErrorView and will be use to handle the Errors
   - stateView should conform to BSSpeechStateView and will be use to handle the changes of recognizer available state
-```swift
-@IBOutlet weak var waveView: BSWaveVisualizeView!
 
+```swift
 let recognizer = BSSpeechRecognizer(
         presenter: BSSpeechRecognizeWaveViewPresenter(
             resourceView: self,
@@ -38,6 +37,10 @@ let recognizer = BSSpeechRecognizer(
             errorView: self,
             stateView: self)
     )
+```
+
+```swift
+@IBOutlet weak var waveView: BSWaveVisualizeView!
 ```
 
 To Start recognize
